@@ -46,7 +46,6 @@ const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
   return (
     <div className="group relative flex flex-col rounded-2xl border border-zinc-100 bg-white overflow-hidden transition-all duration-200 hover:border-zinc-200 hover:shadow-lg">
 
-      {/* Wishlist */}
       <button
         onClick={() => setWished(!wished)}
         className="absolute top-3 right-3 z-10 flex size-8 items-center justify-center rounded-full bg-white shadow-sm border border-zinc-100 transition-colors hover:border-zinc-300"
@@ -54,14 +53,12 @@ const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
         <Heart className={`size-4 transition-colors ${wished ? 'fill-red-500 text-red-500' : 'text-zinc-400'}`} />
       </button>
 
-      {/* Badge */}
       {badge && (
         <div className="absolute top-3 left-3 z-10">
           <Badge className="bg-amber-500 text-white text-xs hover:bg-amber-500">{badge}</Badge>
         </div>
       )}
 
-      {/* Image */}
       <div className="relative h-52 bg-zinc-50 overflow-hidden">
         <Image
           src={product.imageUrl}
@@ -72,20 +69,16 @@ const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
         />
       </div>
 
-      {/* Content */}
       <div className="flex flex-col gap-2.5 p-4 flex-1">
 
-        {/* Category tag */}
         <span className="text-xs font-medium text-amber-500 uppercase tracking-wider">
           {product.category.name}
         </span>
 
-        {/* Name */}
         <p className="text-sm font-semibold text-zinc-800 leading-snug line-clamp-2 min-h-[2.5rem]">
           {product.name}
         </p>
 
-        {/* Rating */}
         <div className="flex items-center gap-1.5">
           <div className="flex gap-0.5">
             {Array.from({ length: 5 }).map((_, i) => (
@@ -103,7 +96,6 @@ const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
           </span>
         </div>
 
-        {/* Price */}
         <div className="flex items-center gap-2 mt-auto">
           <span className="text-base font-bold text-zinc-900">
             ${product.price.toFixed(2)}
@@ -116,7 +108,6 @@ const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
           </span>
         </div>
 
-        {/* Button */}
         <Button
           size="sm"
           onClick={handleAddToCart}
