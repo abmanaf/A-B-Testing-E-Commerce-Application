@@ -256,13 +256,13 @@ ADMIN_EMAIL="your-admin@email.com"
 
 | Command                   | Description                |
 | ------------------------- | -------------------------- |
-| `npm run dev`             | Start dev server           |
-| `npm run build`           | Production build (no lint) |
-| `npm run start`           | Start production server    |
-| `npm run lint`            | Run ESLint                 |
-| `npm run prisma:generate` | Generate Prisma client     |
-| `npm run prisma:push`     | Push schema to DB          |
-| `npm run prisma:studio`   | Open Prisma Studio         |
+| `pnpm dev`             | Start dev server           |
+| `pnpm build`           | Production build (no lint) |
+| `pnpm start`           | Start production server    |
+| `pnpm lint`            | Run ESLint                 |
+| `pnpm prisma:generate` | Generate Prisma client     |
+| `pnpm prisma:push`     | Push schema to DB          |
+| `pnpm prisma:studio`   | Open Prisma Studio         |
 
 ## License
 
