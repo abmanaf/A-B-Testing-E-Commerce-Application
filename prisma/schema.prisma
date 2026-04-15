@@ -1,0 +1,128 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider  = "postgresql"
+}
+
+model User {
+  id          String       @id
+  email       String       @unique
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  assignments Assignment[]
+  events      Event[]
+  orders      Order[]
+}
+
+model Experiment {
+  id          String       @id @default(uuid())
+  name        String
+  description String?
+  status      String       @default("active")
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  variants    Variant[]
+  assignments Assignment[]
+  events      Event[]
+}
+
+model Variant {
+  id           String       @id @default(uuid())
+  name         String
+  description  String?
+  experimentId String
+  experiment   Experiment   @relation(fields: [experimentId], references: [id])
+  assignments  Assignment[]
+  events       Event[]
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+}
+
+model Assignment {
+  id           String     @id @default(uuid())
+  userId       String
+  variantId    String
+  experimentId String
+  user         User       @relation(fields: [userId], references: [id])
+  variant      Variant    @relation(fields: [variantId], references: [id])
+  experiment   Experiment @relation(fields: [experimentId], references: [id])
+  assignedAt   DateTime   @default(now())
+
+  @@unique([userId, experimentId])
+}
+
+model Event {
+  id           String     @id @default(uuid())
+  userId       String
+  variantId    String
+  experimentId String
+  eventType    String
+  metadata     Json?
+  user         User       @relation(fields: [userId], references: [id])
+  variant      Variant    @relation(fields: [variantId], references: [id])
+  experiment   Experiment @relation(fields: [experimentId], references: [id])
+  createdAt    DateTime   @default(now())
+}
+
+model Category {
+  id           String @id @default(uuid())
+  name         String
+  description  String?
+  products     Product[]
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Product {
+  id           String @id @default(uuid())
+  name         String
+  description  String?
+  price        Float
+  imageUrl     String
+  categoryId   String
+  category     Category @relation(fields: [categoryId], references: [id])
+  orders       OrderItem[]
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Order {
+  id           String     @id @default(uuid())
+  userId       String
+  user         User       @relation(fields: [userId], references: [id])
+  status       String     @default("cart")
+  total        Float
+  items        OrderItem[]
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+  shippingFirstName  String?
+  shippingLastName   String?
+  shippingEmail      String?
+  shippingPhone      String?
+  shippingAddress    String?
+  shippingCity       String?
+  shippingState      String?
+  shippingZipCode    String?
+  shippingCountry   String?
+  
+  paymentStatus    String?   @default("pending")
+  paymentMethod    String?
+  transactionId    String?
+}
+
+model OrderItem { 
+  id           String @id @default(uuid())
+  orderId      String 
+  productId    String 
+  quantity     Int
+  order        Order @relation(fields: [orderId], references: [id])
+  product      Product @relation(fields: [productId], references: [id])
+}
