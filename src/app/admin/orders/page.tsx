@@ -132,7 +132,7 @@ export default function AdminOrdersPage() {
                       {order.items.length} item(s)
                     </td>
                     <td className="px-6 py-4 text-sm font-medium text-zinc-900">
-                      ${order.total.toFixed(2)}
+                      ₵{order.total.toFixed(2)}
                     </td>
                     <td className="px-6 py-4">
                       <Badge className={getStatusColor(order.status)}>
@@ -193,7 +193,6 @@ export default function AdminOrdersPage() {
                 </Badge>
               </div>
 
-              {/* Customer Info */}
               <div>
                 <h3 className="font-semibold text-zinc-900 mb-2">Customer</h3>
                 <p className="text-zinc-600">
@@ -204,7 +203,6 @@ export default function AdminOrdersPage() {
                 </p>
               </div>
 
-              {/* Shipping Address */}
               <div>
                 <h3 className="font-semibold text-zinc-900 mb-2">
                   Shipping Address
@@ -214,7 +212,6 @@ export default function AdminOrdersPage() {
                 </p>
               </div>
 
-              {/* Order Items */}
               <div>
                 <h3 className="font-semibold text-zinc-900 mb-2">Items</h3>
                 <div className="space-y-2">
@@ -224,18 +221,17 @@ export default function AdminOrdersPage() {
                         {item.product.name} x {item.quantity}
                       </span>
                       <span className="text-zinc-900">
-                        ${(item.price * item.quantity).toFixed(2)}
+                        ₵{(item.price * item.quantity).toFixed(2)}
                       </span>
                     </div>
                   ))}
                 </div>
                 <div className="border-t border-zinc-100 mt-4 pt-4 flex justify-between font-semibold">
                   <span>Total</span>
-                  <span>${selectedOrder.total.toFixed(2)}</span>
+                  <span>₵{selectedOrder.total.toFixed(2)}</span>
                 </div>
               </div>
 
-              {/* Actions */}
               <div className="flex gap-3 pt-4">
                 <Button className="flex-1 bg-blue-600 hover:bg-blue-700">
                   Update Status

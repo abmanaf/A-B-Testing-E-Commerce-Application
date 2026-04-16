@@ -6,7 +6,6 @@ import {
   Package,
   ShoppingCart,
   Users,
-  TrendingUp,
   ArrowUpRight,
   ArrowDownRight,
 } from 'lucide-react';
