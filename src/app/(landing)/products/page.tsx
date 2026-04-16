@@ -126,8 +126,6 @@ export default function ProductsPage() {
     return variant === 'A' ? 'Add to Cart' : 'Buy Now';
   }, [variant]);
 
-  console.log(products);
-
   const handleAddToCart = async (product: Product) => {
     await addItem(product.id, 1);
     setCartToast(product.name);
