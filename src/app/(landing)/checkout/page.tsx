@@ -73,7 +73,6 @@ export default function CheckoutPage() {
         shipping: formData,
       };
 
-      console.log('Sending payload:', payload); // Debug log
 
       const res = await fetch('/api/checkout', {
         method: 'POST',
@@ -110,9 +109,8 @@ export default function CheckoutPage() {
     );
   }
 
-  const shippingCost = total > 100 ? 0 : 9.99;
-  const tax = total * 0.08;
-  const grandTotal = total + shippingCost + tax;
+  const shippingCost = total > 500 ? 0 : 20;
+  const grandTotal = total + shippingCost;
 
   return (
     <div className="min-h-screen bg-zinc-50 py-8">
@@ -129,7 +127,6 @@ export default function CheckoutPage() {
 
         <form onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Shipping Form */}
             <div className="lg:col-span-2">
               <div className="bg-white rounded-2xl border border-zinc-100 p-6">
                 <h2 className="text-lg font-semibold text-zinc-900 mb-6 flex items-center">
@@ -215,20 +212,20 @@ export default function CheckoutPage() {
                       name="city"
                       value={formData.city}
                       onChange={handleChange}
-                      placeholder="New York"
+                      placeholder="Adenta"
                       required
                       className="w-full"
                     />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-zinc-700 mb-1">
-                      State/Province
+                      Region
                     </label>
                     <Input
                       name="state"
                       value={formData.state}
                       onChange={handleChange}
-                      placeholder="NY"
+                      placeholder="Greater Accra"
                       required
                       className="w-full"
                     />
@@ -254,7 +251,7 @@ export default function CheckoutPage() {
                       name="country"
                       value={formData.country}
                       onChange={handleChange}
-                      placeholder="United States"
+                      placeholder="Ghana"
                       required
                       className="w-full"
                     />
@@ -262,7 +259,6 @@ export default function CheckoutPage() {
                 </div>
               </div>
 
-              {/* Payment Section (Placeholder) */}
               <div className="bg-white rounded-2xl border border-zinc-100 p-6 mt-6">
                 <h2 className="text-lg font-semibold text-zinc-900 mb-6 flex items-center">
                   <CreditCard className="size-5 mr-2" />
@@ -275,7 +271,6 @@ export default function CheckoutPage() {
               </div>
             </div>
 
-            {/* Order Summary */}
             <div>
               <div className="bg-white rounded-2xl border border-zinc-100 p-6 sticky top-24">
                 <h2 className="font-semibold text-zinc-900 mb-4">
@@ -289,7 +284,7 @@ export default function CheckoutPage() {
                         {item.product.name} x {item.quantity}
                       </span>
                       <span className="text-zinc-900">
-                        ${(item.product.price * item.quantity).toFixed(2)}
+                        ₵{(item.product.price * item.quantity).toFixed(2)}
                       </span>
                     </div>
                   ))}
@@ -298,23 +293,19 @@ export default function CheckoutPage() {
                 <div className="border-t border-zinc-100 pt-3 space-y-2 text-sm">
                   <div className="flex justify-between">
                     <span className="text-zinc-500">Subtotal</span>
-                    <span className="text-zinc-900">${total.toFixed(2)}</span>
+                    <span className="text-zinc-900">₵{total.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-zinc-500">Shipping</span>
                     <span className="text-zinc-900">
                       {shippingCost === 0
                         ? 'Free'
-                        : `$${shippingCost.toFixed(2)}`}
+                        : `₵${shippingCost.toFixed(2)}`}
                     </span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-zinc-500">Tax (8%)</span>
-                    <span className="text-zinc-900">${tax.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between font-semibold text-base pt-2 border-t border-zinc-100">
                     <span>Total</span>
-                    <span>${grandTotal.toFixed(2)}</span>
+                    <span>₵{grandTotal.toFixed(2)}</span>
                   </div>
                 </div>
 

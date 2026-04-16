@@ -3,7 +3,6 @@
 import { useEffect, useState, useMemo } from 'react';
 import { useUser } from '@clerk/nextjs';
 import { ShoppingCart, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import ProductFilters from '@/components/molecule/ProductFilters';
 import ProductsToolbar from '@/components/molecule/ProductsToolbar';
@@ -39,15 +38,12 @@ function trackEvent(
 export default function ProductsPage() {
   const { user, isLoaded } = useUser();
 
-  // Data
   const [products, setProducts] = useState<Product[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
 
   const [variantId, setVariantId] = useState<string>('');
   const [variant, setVariant] = useState<'A' | 'B' | null>(null);
-
-  // Filters & sorting
 
   const [selectedCategory, setSelectedCategory] = useState<string>('');
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 9999]);
@@ -245,7 +241,7 @@ export default function ProductsPage() {
                     className="gap-1.5 pl-3 pr-2 py-1 cursor-pointer hover:bg-zinc-200"
                     onClick={() => setPriceRange([0, 9999])}
                   >
-                    ${priceRange[0]} – $
+                    ₵{priceRange[0]} – ₵{priceRange[1] === 9999 ? '∞' : priceRange[1]}
                     {priceRange[1] === 9999 ? '∞' : priceRange[1]}
                     <X className="size-3" />
                   </Badge>

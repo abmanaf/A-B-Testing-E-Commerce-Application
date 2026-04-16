@@ -4,9 +4,9 @@ import { useCart } from '@/components/context/CartContext';
 import { ShoppingCart, Minus, Plus, Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { useState } from 'react';
 import { useUser } from '@clerk/nextjs';
 import { useRouter } from 'next/navigation';
+import Loading from '@/components/shared/Loading';
 
 export default function CartPage() {
   const {
@@ -26,7 +26,7 @@ export default function CartPage() {
     if (!isUserLoaded) return;
 
     if (!user) {
-      router.push('/sign-in?redirect=/checkout');
+      router.push('/sign-in?redirect_url=/cart');
       return;
     }
 
@@ -36,11 +36,7 @@ export default function CartPage() {
   };
 
   if (isLoading || !isUserLoaded) {
-    return (
-      <div className="min-h-screen bg-zinc-50 flex items-center justify-center">
-        <p>Loading cart...</p>
-      </div>
-    );
+    return <Loading />;
   }
 
   if (items.length === 0) {
@@ -94,7 +90,7 @@ export default function CartPage() {
                     {item.product.name}
                   </h3>
                   <p className="text-zinc-500 mt-1">
-                    ${item.product.price.toFixed(2)}
+                    ₵{item.product.price.toFixed(2)}
                   </p>
 
                   <div className="flex items-center gap-3 mt-4">
@@ -135,7 +131,7 @@ export default function CartPage() {
 
                 <div className="text-right">
                   <p className="font-medium text-zinc-900">
-                    ${(item.product.price * item.quantity).toFixed(2)}
+                    ₵{(item.product.price * item.quantity).toFixed(2)}
                   </p>
                 </div>
               </div>
@@ -151,7 +147,7 @@ export default function CartPage() {
               <div className="space-y-3 text-sm">
                 <div className="flex justify-between">
                   <span className="text-zinc-500">Subtotal</span>
-                  <span className="text-zinc-900">${total.toFixed(2)}</span>
+                  <span className="text-zinc-900">₵{total.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-zinc-500">Shipping</span>
@@ -159,7 +155,7 @@ export default function CartPage() {
                 </div>
                 <div className="border-t border-zinc-100 pt-3 flex justify-between font-medium">
                   <span>Total</span>
-                  <span>${total.toFixed(2)}</span>
+                  <span>₵{total.toFixed(2)}</span>
                 </div>
               </div>
 
