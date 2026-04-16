@@ -1,5 +1,6 @@
 import {ROUTES} from "@/config/routes";
-import { Mail, ScanFace, X } from "lucide-react";
+import { Mail} from "lucide-react";
+import { FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 export const NAV_ITEMS = [
   { name: "Home", href: ROUTES.HOME },
@@ -35,8 +36,8 @@ export const FOOTER_LINKS = {
 }
 
 export const SOCIALS = [
-  { icon: X,   href: '#', label: 'Twitter' },
-  { icon: ScanFace, href: '#', label: 'Instagram' },
-  { icon: Mail,    href: '#', label: 'Github' },
-  { icon: Mail,      href: '#', label: 'Email' },
+  { icon: FaTwitter,   href: '#', label: 'Twitter' },
+  { icon: FaInstagram, href: '#', label: 'Instagram' },
+  { icon: FaLinkedin,  href: '#', label: 'LinkedIn' },
+  { icon: Mail,        href: '#', label: 'Email' },
 ]

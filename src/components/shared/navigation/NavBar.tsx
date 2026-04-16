@@ -46,7 +46,6 @@ const Navbar = () => {
         </nav>
 
         <div className="hidden md:flex items-center gap-3">
-          {/* Cart Icon */}
           <Link href="/cart" className="relative p-2 text-zinc-600 hover:text-zinc-900 transition-colors">
             <ShoppingCart className="size-5" />
             {itemCount > 0 && (
@@ -74,7 +73,6 @@ const Navbar = () => {
         </div>
 
         <div className="flex md:hidden items-center gap-3">
-            {/* Cart Icon for Mobile */}
             <Link href="/cart" className="relative p-2 text-zinc-600">
               <ShoppingCart className="size-5" />
               {itemCount > 0 && (
