@@ -8,12 +8,12 @@ import ProductCard from '@/components/atom/ProductCard'
 import { ROUTES } from '@/config/routes'
 
 const TRENDING_PRODUCTS = [
-  { name: 'Wireless Noise Cancelling Headphones Pro', price: '$79.99', originalPrice: '$129.99', rating: 5, reviews: 2847, badge: 'Best Seller', emoji: '🎧' },
-  { name: 'Minimalist Leather Watch', price: '$149.00', originalPrice: '$199.00', rating: 4, reviews: 1203, badge: 'New', emoji: '⌚' },
-  { name: 'Ergonomic Office Chair', price: '$299.00', originalPrice: '$399.00', rating: 5, reviews: 876, badge: 'Sale', emoji: '🪑' },
-  { name: 'Running Shoes Ultra Boost', price: '$89.99', originalPrice: '$120.00', rating: 4, reviews: 3102, badge: undefined, emoji: '👟' },
-  { name: 'Smart Fitness Tracker', price: '$59.99', originalPrice: '$89.99', rating: 4, reviews: 1567, badge: 'Popular', emoji: '⌚' },
-  { name: 'Portable Bluetooth Speaker', price: '$45.99', originalPrice: '$69.99', rating: 5, reviews: 2341, badge: 'Sale', emoji: '🔊' },
+  { name: 'Wireless Noise Cancelling Headphones Pro', price: '₵79.99', originalPrice: '₵129.99', rating: 5, reviews: 2847, badge: 'Best Seller', emoji: '🎧' },
+  { name: 'Minimalist Leather Watch', price: '₵149.00', originalPrice: '₵199.00', rating: 4, reviews: 1203, badge: 'New', emoji: '⌚' },
+  { name: 'Ergonomic Office Chair', price: '₵299.00', originalPrice: '₵399.00', rating: 5, reviews: 876, badge: 'Sale', emoji: '🪑' },
+  { name: 'Running Shoes Ultra Boost', price: '₵89.99', originalPrice: '₵120.00', rating: 4, reviews: 3102, badge: undefined, emoji: '👟' },
+  { name: 'Smart Fitness Tracker', price: '₵59.99', originalPrice: '₵89.99', rating: 4, reviews: 1567, badge: 'Popular', emoji: '⌚' },
+  { name: 'Portable Bluetooth Speaker', price: '₵45.99', originalPrice: '₵69.99', rating: 5, reviews: 2341, badge: 'Sale', emoji: '🔊' },
 ]
 
 interface TrendingSectionProps {

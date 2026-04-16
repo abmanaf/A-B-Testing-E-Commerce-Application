@@ -14,11 +14,11 @@ interface ProductFiltersProps {
 }
 
 const PRICE_RANGES: { label: string; range: [number, number] }[] = [
-  { label: 'Under $30',     range: [0, 30] },
-  { label: '$30 – $80',     range: [30, 80] },
-  { label: '$80 – $150',    range: [80, 150] },
-  { label: '$150 – $300',   range: [150, 300] },
-  { label: 'Over $300',     range: [300, 9999] },
+  { label: 'Under ₵30',     range: [0, 30] },
+  { label: '₵30 – ₵80',     range: [30, 80] },
+  { label: '₵80 – ₵150',    range: [80, 150] },
+  { label: '₵150 – ₵300',   range: [150, 300] },
+  { label: 'Over ₵300',     range: [300, 9999] },
 ]
 
 const ProductFilters = ({
