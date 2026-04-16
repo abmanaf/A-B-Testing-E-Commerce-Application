@@ -57,7 +57,7 @@ const ProductsGrid = ({ products, loading, btnLabel }: ProductsGridProps) => {
         <ProductCard
           key={product.id}
           name={product.name}
-          price={`$${product.price}`}
+          price={`₵${product.price}`}
           image={product.imageUrl}
           onAddToCart={() => handleAddToCart(product)}
           btnLabel={btnLabel}
