@@ -1,11 +1,16 @@
 interface MilestoneItemProps {
-  year: string
-  title: string
-  desc: string
-  isLast?: boolean
+  year: string;
+  title: string;
+  desc: string;
+  isLast?: boolean;
 }
 
-const MilestoneItem = ({ year, title, desc, isLast = false }: MilestoneItemProps) => {
+const MilestoneItem = ({
+  year,
+  title,
+  desc,
+  isLast = false,
+}: MilestoneItemProps) => {
   return (
     <div className="relative flex gap-6">
       {!isLast && (
@@ -24,7 +29,7 @@ const MilestoneItem = ({ year, title, desc, isLast = false }: MilestoneItemProps
         <p className="mt-1 text-sm leading-relaxed text-zinc-500">{desc}</p>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default MilestoneItem
+export default MilestoneItem;

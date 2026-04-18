@@ -1,9 +1,9 @@
-import { LucideIcon } from 'lucide-react'
+import { LucideIcon } from 'lucide-react';
 
 interface ValueCardProps {
-  icon: LucideIcon
-  title: string
-  desc: string
+  icon: LucideIcon;
+  title: string;
+  desc: string;
 }
 
 const ValueCard = ({ icon: Icon, title, desc }: ValueCardProps) => {
@@ -17,7 +17,7 @@ const ValueCard = ({ icon: Icon, title, desc }: ValueCardProps) => {
         <p className="mt-1.5 text-sm leading-relaxed text-zinc-500">{desc}</p>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ValueCard
+export default ValueCard;

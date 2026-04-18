@@ -1,16 +1,15 @@
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { FaLinkedin, FaTwitter } from "react-icons/fa"
-
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 interface TeamCardProps {
-  name: string
-  role: string
-  bio: string
-  initials: string
-  color: string
-  imageUrl?: string
-  twitter?: string
-  linkedin?: string
+  name: string;
+  role: string;
+  bio: string;
+  initials: string;
+  color: string;
+  imageUrl?: string;
+  twitter?: string;
+  linkedin?: string;
 }
 
 const TeamCard = ({
@@ -35,9 +34,9 @@ const TeamCard = ({
           <p className="text-sm text-gray-500">{role}</p>
         </div>
       </div>
-      
+
       <p className="mt-4 text-sm text-gray-600">{bio}</p>
-      
+
       {(twitter || linkedin) && (
         <div className="mt-4 flex gap-3 border-t border-gray-100 pt-4">
           {twitter && (
@@ -61,7 +60,7 @@ const TeamCard = ({
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default TeamCard
+export default TeamCard;

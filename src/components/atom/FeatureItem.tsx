@@ -1,9 +1,9 @@
-import { LucideIcon } from 'lucide-react'
+import { LucideIcon } from 'lucide-react';
 
 interface FeatureItemProps {
-  icon: LucideIcon
-  title: string
-  desc: string
+  icon: LucideIcon;
+  title: string;
+  desc: string;
 }
 
 const FeatureItem = ({ icon: Icon, title, desc }: FeatureItemProps) => {
@@ -13,7 +13,7 @@ const FeatureItem = ({ icon: Icon, title, desc }: FeatureItemProps) => {
       <p className="text-base font-semibold text-zinc-800">{title}</p>
       <p className="mt-1 text-sm text-zinc-400">{desc}</p>
     </div>
-  )
-}
+  );
+};
 
-export default FeatureItem
+export default FeatureItem;

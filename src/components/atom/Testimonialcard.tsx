@@ -1,16 +1,23 @@
-import { Star } from 'lucide-react'
-import { cn } from '@/lib/utils'
+import { Star } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 interface TestimonialCardProps {
-  name: string
-  role: string
-  quote: string
-  rating: number
-  initials: string
-  color: string
+  name: string;
+  role: string;
+  quote: string;
+  rating: number;
+  initials: string;
+  color: string;
 }
 
-const TestimonialCard = ({ name, role, quote, rating, initials, color }: TestimonialCardProps) => {
+const TestimonialCard = ({
+  name,
+  role,
+  quote,
+  rating,
+  initials,
+  color,
+}: TestimonialCardProps) => {
   return (
     <div className="flex flex-col gap-4 rounded-2xl border border-zinc-100 bg-white p-6">
       <div className="flex gap-0.5">
@@ -22,7 +29,12 @@ const TestimonialCard = ({ name, role, quote, rating, initials, color }: Testimo
       <p className="text-sm text-zinc-600 leading-relaxed">"{quote}"</p>
 
       <div className="flex items-center gap-3 mt-auto">
-        <div className={cn("flex size-9 items-center justify-center rounded-full text-xs font-bold text-white", color)}>
+        <div
+          className={cn(
+            'flex size-9 items-center justify-center rounded-full text-xs font-bold text-white',
+            color
+          )}
+        >
           {initials}
         </div>
         <div>
@@ -31,7 +43,7 @@ const TestimonialCard = ({ name, role, quote, rating, initials, color }: Testimo
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default TestimonialCard
+export default TestimonialCard;
