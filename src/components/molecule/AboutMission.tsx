@@ -1,18 +1,16 @@
-import Container from '@/components/shared/Container'
+import Container from '@/components/shared/Container';
 
 const MISSION_STATS = [
-  { value: '2020',   label: 'Founded' },
-  { value: '50K+',  label: 'Happy Customers' },
-  { value: '30+',   label: 'Countries Served' },
-  { value: '10K+',  label: 'Products Available' },
-]
+  { value: '2020', label: 'Founded' },
+  { value: '50K+', label: 'Happy Customers' },
+  { value: '30+', label: 'Countries Served' },
+  { value: '10K+', label: 'Products Available' },
+];
 
 const AboutMission = () => {
   return (
     <Container className="bg-white" innerClassName="max-w-5xl">
-
       <div className="grid gap-16 lg:grid-cols-2 lg:gap-24 items-center">
-
         <div>
           <p className="text-xs font-semibold uppercase tracking-widest text-amber-500 mb-2">
             Our Mission
@@ -34,8 +32,8 @@ const AboutMission = () => {
               directly with suppliers to keep prices fair for everyone.
             </p>
             <p>
-              Every product on our platform goes through a strict quality review.
-              If we wouldn't buy it ourselves, it doesn't make the cut.
+              Every product on our platform goes through a strict quality
+              review. If we wouldn't buy it ourselves, it doesn't make the cut.
             </p>
           </div>
         </div>
@@ -46,15 +44,16 @@ const AboutMission = () => {
               key={stat.label}
               className="flex flex-col gap-1 rounded-2xl border border-zinc-100 bg-zinc-50 p-6"
             >
-              <span className="text-3xl font-bold text-zinc-900">{stat.value}</span>
+              <span className="text-3xl font-bold text-zinc-900">
+                {stat.value}
+              </span>
               <span className="text-sm text-zinc-400">{stat.label}</span>
             </div>
           ))}
         </div>
-
       </div>
     </Container>
-  )
-}
+  );
+};
 
-export default AboutMission
+export default AboutMission;

@@ -1,7 +1,7 @@
-import { Heart, Shield, Zap, Leaf, Users, Star } from 'lucide-react'
-import Container from '@/components/shared/Container'
-import SectionHeader from '@/components/shared/SectionHeader'
-import ValueCard from '@/components/atom/ValueCard'
+import { Heart, Shield, Zap, Leaf, Users, Star } from 'lucide-react';
+import Container from '@/components/shared/Container';
+import SectionHeader from '@/components/shared/SectionHeader';
+import ValueCard from '@/components/atom/ValueCard';
 
 const VALUES = [
   {
@@ -34,15 +34,12 @@ const VALUES = [
     title: 'Uncompromising Quality',
     desc: 'Every product is reviewed before it goes live. No shortcuts. No compromises.',
   },
-]
+];
 
 const AboutValues = () => {
   return (
     <Container className="bg-zinc-50">
-      <SectionHeader
-        eyebrow="What we stand for"
-        title="Our Core Values"
-      />
+      <SectionHeader eyebrow="What we stand for" title="Our Core Values" />
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {VALUES.map((value) => (
           <ValueCard
@@ -54,7 +51,7 @@ const AboutValues = () => {
         ))}
       </div>
     </Container>
-  )
-}
+  );
+};
 
-export default AboutValues
+export default AboutValues;

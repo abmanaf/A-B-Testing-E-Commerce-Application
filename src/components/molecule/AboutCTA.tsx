@@ -1,19 +1,18 @@
-import Link from 'next/link'
-import { ArrowRight, Mail } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { ROUTES } from '@/config/routes'
+import Link from 'next/link';
+import { ArrowRight, Mail } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { ROUTES } from '@/config/routes';
 
 const BADGE_DATA = [
-  { value: '30-day',  label: 'Free Returns' },
-  { value: '24/7',    label: 'Customer Support' },
-  { value: '100%',    label: 'Secure Checkout' },
-]
+  { value: '30-day', label: 'Free Returns' },
+  { value: '24/7', label: 'Customer Support' },
+  { value: '100%', label: 'Secure Checkout' },
+];
 
 const AboutCTA = () => {
   return (
     <section className="bg-zinc-900 px-6 py-20">
       <div className="mx-auto max-w-3xl text-center">
-
         <p className="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-3">
           Join us
         </p>
@@ -22,8 +21,8 @@ const AboutCTA = () => {
           <span className="text-amber-400">e-buy difference?</span>
         </h2>
         <p className="mt-4 text-zinc-400 leading-relaxed max-w-xl mx-auto">
-          Join 50,000+ shoppers who've made e-buy their go-to destination
-          for quality products at honest prices.
+          Join 50,000+ shoppers who've made e-buy their go-to destination for
+          quality products at honest prices.
         </p>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
@@ -56,10 +55,9 @@ const AboutCTA = () => {
             </div>
           ))}
         </div>
-
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default AboutCTA
+export default AboutCTA;

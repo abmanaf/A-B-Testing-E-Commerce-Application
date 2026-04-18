@@ -1,13 +1,12 @@
-import Link from 'next/link'
-import { ArrowRight, ShoppingBag } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { ROUTES } from '@/config/routes'
+import Link from 'next/link';
+import { ArrowRight, ShoppingBag } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { ROUTES } from '@/config/routes';
 
 const AboutHero = () => {
   return (
     <section className="bg-zinc-900 px-6 py-24 text-center">
       <div className="mx-auto max-w-3xl">
-
         <span className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-800 px-4 py-1 text-xs font-medium text-amber-400 mb-6">
           <ShoppingBag className="size-3" />
           Our Story
@@ -43,10 +42,9 @@ const AboutHero = () => {
             </Button>
           </Link>
         </div>
-
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default AboutHero
+export default AboutHero;
