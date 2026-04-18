@@ -1,6 +1,6 @@
-import Container from '@/components/shared/Container'
-import SectionHeader from '@/components/shared/SectionHeader'
-import TeamCard from '@/components/atom/TeamCard'
+import Container from '@/components/shared/Container';
+import SectionHeader from '@/components/shared/SectionHeader';
+import TeamCard from '@/components/atom/TeamCard';
 
 const TEAM = [
   {
@@ -63,22 +63,19 @@ const TEAM = [
     twitter: '#',
     linkedin: '#',
   },
-]
+];
 
 const AboutTeam = () => {
   return (
     <Container className="bg-zinc-50">
-      <SectionHeader
-        eyebrow="The people behind e-buy"
-        title="Meet Our Team"
-      />
+      <SectionHeader eyebrow="The people behind e-buy" title="Meet Our Team" />
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {TEAM.map((member) => (
           <TeamCard key={member.name} {...member} />
         ))}
       </div>
     </Container>
-  )
-}
+  );
+};
 
-export default AboutTeam
+export default AboutTeam;

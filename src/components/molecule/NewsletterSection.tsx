@@ -1,6 +1,6 @@
-import Container from '@/components/shared/Container'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
+import Container from '@/components/shared/Container';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 
 const NewsletterSection = () => {
   return (
@@ -31,7 +31,7 @@ const NewsletterSection = () => {
         No spam. Unsubscribe at any time.
       </p>
     </Container>
-  )
-}
+  );
+};
 
-export default NewsletterSection
+export default NewsletterSection;

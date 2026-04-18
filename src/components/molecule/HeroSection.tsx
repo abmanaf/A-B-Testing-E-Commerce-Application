@@ -1,18 +1,21 @@
-import { ArrowRight } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import FeatureItem from '@/components/atom/FeatureItem'
-import { FEATURES } from '@/config/const'
+import { ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import FeatureItem from '@/components/atom/FeatureItem';
+import { FEATURES } from '@/config/const';
 
 interface HeroSectionProps {
-  ctaLabel: string
-  onCTAClick: () => void
-  onLearnMore: () => void
+  ctaLabel: string;
+  onCTAClick: () => void;
+  onLearnMore: () => void;
 }
 
-const HeroSection = ({ ctaLabel, onCTAClick, onLearnMore }: HeroSectionProps) => {
+const HeroSection = ({
+  ctaLabel,
+  onCTAClick,
+  onLearnMore,
+}: HeroSectionProps) => {
   return (
     <section className="min-h-[calc(100vh-4rem)] bg-zinc-50 flex flex-col items-center justify-center px-6 py-20 text-center">
-
       <span className="mb-6 inline-block rounded-full border border-zinc-200 bg-white px-4 py-1 text-xs font-medium uppercase tracking-widest text-zinc-400">
         New arrivals every week
       </span>
@@ -23,8 +26,8 @@ const HeroSection = ({ ctaLabel, onCTAClick, onLearnMore }: HeroSectionProps) =>
       </h1>
 
       <p className="mt-6 max-w-lg text-lg leading-relaxed text-zinc-500">
-        Discover thousands of curated products from electronics to fashion.
-        All in one place, delivered fast.
+        Discover thousands of curated products from electronics to fashion. All
+        in one place, delivered fast.
       </p>
 
       <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
@@ -62,7 +65,7 @@ const HeroSection = ({ ctaLabel, onCTAClick, onLearnMore }: HeroSectionProps) =>
         ))}
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default HeroSection
+export default HeroSection;

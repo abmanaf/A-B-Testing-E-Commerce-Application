@@ -1,20 +1,20 @@
-'use client'
+'use client';
 
-import { SlidersHorizontal } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { SlidersHorizontal } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select'
+} from '@/components/ui/select';
 
 interface ProductsToolbarProps {
-  total: number
-  sortBy: string
-  onSortChange: (sort: string) => void
-  onFilterToggle: () => void
+  total: number;
+  sortBy: string;
+  onSortChange: (sort: string) => void;
+  onFilterToggle: () => void;
 }
 
 const SORT_OPTIONS = [
@@ -23,7 +23,7 @@ const SORT_OPTIONS = [
   { value: 'price-desc', label: 'Price: High to Low' },
   { value: 'name-asc', label: 'Name: A–Z' },
   { value: 'newest', label: 'Newest First' },
-]
+];
 
 const ProductsToolbar = ({
   total,
@@ -34,7 +34,8 @@ const ProductsToolbar = ({
   return (
     <div className="flex items-center justify-between gap-4 pb-6 border-b border-zinc-100">
       <p className="text-sm text-zinc-500">
-        <span className="font-semibold text-zinc-900">{total}</span> products found
+        <span className="font-semibold text-zinc-900">{total}</span> products
+        found
       </p>
 
       <div className="flex items-center gap-3">
@@ -62,7 +63,7 @@ const ProductsToolbar = ({
         </Select>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProductsToolbar
+export default ProductsToolbar;
