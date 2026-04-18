@@ -239,7 +239,8 @@ export default function ProductsPage() {
                     className="gap-1.5 pl-3 pr-2 py-1 cursor-pointer hover:bg-zinc-200"
                     onClick={() => setPriceRange([0, 9999])}
                   >
-                    ₵{priceRange[0]} – ₵{priceRange[1] === 9999 ? '∞' : priceRange[1]}
+                    ₵{priceRange[0]} – ₵
+                    {priceRange[1] === 9999 ? '∞' : priceRange[1]}
                     {priceRange[1] === 9999 ? '∞' : priceRange[1]}
                     <X className="size-3" />
                   </Badge>

@@ -73,7 +73,6 @@ export default function CheckoutPage() {
         shipping: formData,
       };
 
-
       const res = await fetch('/api/checkout', {
         method: 'POST',
         headers: {

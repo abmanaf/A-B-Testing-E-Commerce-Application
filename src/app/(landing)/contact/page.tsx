@@ -11,12 +11,10 @@ export default function ContactPage() {
             <Mail className="size-8 text-amber-600" />
           </div>
 
-          <h1 className="text-2xl font-bold text-zinc-900 mb-2">
-            Coming Soon
-          </h1>
+          <h1 className="text-2xl font-bold text-zinc-900 mb-2">Coming Soon</h1>
 
           <p className="text-zinc-500 mb-6">
-            We&apos;re working hard to bring you the best support experience. 
+            We&apos;re working hard to bring you the best support experience.
             Our contact form will be available shortly!
           </p>
 
