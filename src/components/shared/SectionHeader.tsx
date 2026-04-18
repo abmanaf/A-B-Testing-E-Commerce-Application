@@ -1,22 +1,22 @@
-"use client"
+'use client';
 
-import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
-import { cn } from '@/lib/utils'
-import { Button } from '@/components/ui/button'
-import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
+import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
+import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react';
 
 interface SectionHeaderProps {
-  eyebrow: string
-  title: string
-  viewAllHref?: string
-  viewAllLabel?: string
-  centered?: boolean
-  showViewAll?: boolean
-  onPrevious?: () => void
-  onNext?: () => void
-  canScrollPrev?: boolean
-  canScrollNext?: boolean
+  eyebrow: string;
+  title: string;
+  viewAllHref?: string;
+  viewAllLabel?: string;
+  centered?: boolean;
+  showViewAll?: boolean;
+  onPrevious?: () => void;
+  onNext?: () => void;
+  canScrollPrev?: boolean;
+  canScrollNext?: boolean;
 }
 
 const SectionHeader = ({
@@ -32,7 +32,11 @@ const SectionHeader = ({
   canScrollNext = true,
 }: SectionHeaderProps) => {
   return (
-    <div className={cn(`mb-10 flex items-end ${centered ? 'flex-col text-center' : 'justify-between'}`)}>
+    <div
+      className={cn(
+        `mb-10 flex items-end ${centered ? 'flex-col text-center' : 'justify-between'}`
+      )}
+    >
       <div className={cn(centered ? 'flex flex-col items-center' : '')}>
         <p className="text-xs font-semibold uppercase tracking-widest text-amber-500">
           {eyebrow}
@@ -90,7 +94,7 @@ const SectionHeader = ({
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default SectionHeader
+export default SectionHeader;

@@ -1,16 +1,14 @@
-import Link from 'next/link'
-import { ShoppingBag } from 'lucide-react'
-import { WEBSITE_NAME } from '@/config/site-config'
-import { ROUTES } from '@/config/routes'
-import { FOOTER_LINKS, SOCIALS } from '@/components/shared/index'
+import Link from 'next/link';
+import { ShoppingBag } from 'lucide-react';
+import { WEBSITE_NAME } from '@/config/site-config';
+import { ROUTES } from '@/config/routes';
+import { FOOTER_LINKS, SOCIALS } from '@/components/shared/index';
 
 const Footer = () => {
   return (
     <footer className="w-full border-t border-zinc-100 bg-gray-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12">
-
         <div className="grid grid-cols-2 gap-8 md:grid-cols-6">
-
           <div className="col-span-2">
             <Link
               href={ROUTES.HOME}
@@ -20,7 +18,8 @@ const Footer = () => {
               {WEBSITE_NAME}
             </Link>
             <p className="mt-3 text-sm text-zinc-400 leading-relaxed max-w-xs">
-              Discover thousands of curated products at prices you'll love. Delivered fast, returned easy.
+              Discover thousands of curated products at prices you'll love.
+              Delivered fast, returned easy.
             </p>
 
             <div className="mt-5 flex items-center gap-3">
@@ -56,7 +55,6 @@ const Footer = () => {
               </ul>
             </div>
           ))}
-
         </div>
 
         <div className="mt-12 border-t border-zinc-100 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -69,10 +67,9 @@ const Footer = () => {
             <span>for better shopping experiences</span>
           </div>
         </div>
-
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
