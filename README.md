@@ -254,8 +254,8 @@ ADMIN_EMAIL="your-admin@email.com"
 
 ## Scripts
 
-| Command                   | Description                |
-| ------------------------- | -------------------------- |
+| Command                | Description                |
+| ---------------------- | -------------------------- |
 | `pnpm dev`             | Start dev server           |
 | `pnpm build`           | Production build (no lint) |
 | `pnpm start`           | Start production server    |
