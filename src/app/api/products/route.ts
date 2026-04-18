@@ -1,9 +1,11 @@
-import { NextResponse } from 'next/server'
-import { prisma } from '@/lib/prisma'
-import { auth } from '@clerk/nextjs/server'
+import { NextResponse } from 'next/server';
+import { prisma } from '@/lib/prisma';
+import { auth } from '@clerk/nextjs/server';
 
 export async function GET() {
-  const products = await prisma.product.findMany({ include: { category: true } });
+  const products = await prisma.product.findMany({
+    include: { category: true },
+  });
   return NextResponse.json(products);
 }
 
@@ -12,7 +14,8 @@ export async function POST(request: Request) {
   if (!userId) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
-  const { name, description, price, imageUrl, categoryId } = await request.json();
+  const { name, description, price, imageUrl, categoryId } =
+    await request.json();
 
   const product = await prisma.product.create({
     data: {
@@ -20,8 +23,8 @@ export async function POST(request: Request) {
       description,
       price,
       imageUrl,
-      categoryId
-    }
+      categoryId,
+    },
   });
 
   return NextResponse.json(product);
